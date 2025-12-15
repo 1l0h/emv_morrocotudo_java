@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # --- SERVICIO DE APLICACIÓN JAVA ---
+  app:
+    # Construye la imagen usando el Dockerfile en este mismo directorio
+    build: .
+    # Mapeo de puertos (aunque tu app actual no tiene interfaz web)
+    # Se incluye para cumplir con el requisito de localhost:8080.
+    ports:
+      - "8080:8080"
+    # Reinicia si falla
+    restart: always
+
+  # --- SERVICIO DE BASE DE DATOS (PostgreSQL) ---
+  db:
+    image: postgres:14-alpine
+    # Variables de entorno para las credenciales de la DB
+    environment:
+      POSTGRES_DB: mi_base_de_datos
+      POSTGRES_USER: usuario_app
+      POSTGRES_PASSWORD: clave_secreta_app
+    # Persistencia de datos
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    restart: always
+    # Expone el puerto solo internamente, no al host
+    expose:
+      - "5432"
+
+# Volúmenes para persistencia de datos de la DB
+volumes:
+  db_data:
