@@ -1,7 +1,7 @@
-🚀 EMV Java con PostgreSQL: Entorno Mínimo Viable
+## 🚀 EMV Java con PostgreSQL: Entorno Mínimo Viable
 Este repositorio contiene la configuración para un Entorno Mínimo Viable (EMV) de desarrollo que permite levantar una aplicación Java junto con una base de datos persistente PostgreSQL, todo orquestado por Docker Compose. El objetivo es proporcionar un sandbox funcional para nuevos proyectos Java que requieran persistencia de datos.
 
-🎯 Arquitectura del Entorno (Paso 1)
+## 🎯 Arquitectura del Entorno (Paso 1)
 El entorno se define mediante dos servicios principales:
 
 
@@ -10,14 +10,14 @@ app (Java): Contenedor que construye y ejecuta la aplicación Java con JDK 17 (E
 
 db (PostgreSQL): Base de datos relacional PostgreSQL 14 que asegura la persistencia de los datos.
 
-✅ Requisitos Previos
+## ✅ Requisitos Previos
 Para utilizar este EMV, es necesario tener instalados en tu sistema:
 
 Docker Engine: Para construir y ejecutar los contenedores.
 
 Docker Compose: Para orquestar los servicios (app y db) con el comando docker compose.
 
-🛠️ Configuración y Uso (Paso 3)
+## 🛠️ Configuración y Uso (Paso 3)
 1. Estructura de Archivos
 Asegúrate de que los siguientes archivos se encuentren en el directorio raíz de tu proyecto:
 
@@ -59,7 +59,7 @@ Detiene y elimina los contenedores y la red. Mantiene el volumen de datos (db_da
 Detiene, elimina contenedores y elimina permanentemente los datos de la DB (-v para volúmenes).
 
 
-Exportar a Hojas de cálculo
+## Exportar a Hojas de cálculo
 
 🔌 Conexión a Servicios (Paso 3)
 Servicio de Aplicación (app)
